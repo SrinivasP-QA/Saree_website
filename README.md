@@ -98,7 +98,7 @@ Open **`products.js`** and follow the instructions at the top of the file.
 ## 📞 Update Contact Details
 
 In `index.html`, search and replace:
-- `919876543210` → your WhatsApp number (with country code, no +)
+- `91987654388210` → your WhatsApp number (with country code, no +)
 - `KanjeevaramSilks` → your Telegram username
 - `hello@kanjeevaramsilks.in` → your email
 - `12, Silk Weavers Street...` → your actual address
