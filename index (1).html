@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanjeevaram Silks – Premium Saree Collection</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">✦</span>
+      <div>
+        <span class="logo-main">Kanjeevaram</span>
+        <span class="logo-sub">SILKS</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#home" class="nav-link" onclick="closeMenu()">Home</a>
+      <a href="#products" class="nav-link" onclick="closeMenu()">Products</a>
+      <a href="#about" class="nav-link" onclick="closeMenu()">About Us</a>
+      <a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-wrap">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search sarees…" oninput="handleSearch(this.value)"/>
+        <i class="fa fa-search search-icon"></i>
+      </div>
+      <button class="icon-btn" onclick="toggleWishlist()" title="Wishlist">
+        <i class="fa fa-heart"></i>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn cart-btn" onclick="openCart()" title="Cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="https://wa.me/919876543210" target="_blank" class="icon-btn wa-btn" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://t.me/KanjeevaramSilks" target="_blank" class="icon-btn tg-btn" title="Telegram">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">New Collection 2025</p>
+    <h1 class="hero-title">Draped in<br/><em>Timeless Elegance</em></h1>
+    <p class="hero-sub">Handwoven Kanjeevaram & Banarasi silks, curated for the modern woman who honours tradition.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollTo('products')">Explore Collection</button>
+      <button class="btn-outline" onclick="scrollTo('about')">Our Story</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>2500+</strong><span>Sarees</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>15K+</strong><span>Happy Customers</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>100%</strong><span>Pure Silk</span></div>
+    </div>
+  </div>
+  <div class="hero-image-wrap">
+    <div class="hero-img-frame">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80" alt="Premium Saree" class="hero-img"/>
+      <div class="hero-badge">NEW ARRIVALS</div>
+    </div>
+  </div>
+  <div class="scroll-indicator" onclick="scrollTo('products')">
+    <span>Scroll</span>
+    <i class="fa fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ===== MARQUEE STRIP ===== -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>✦ Kanjeevaram Silk</span><span>✦ Banarasi Weaves</span><span>✦ Bridal Collections</span>
+    <span>✦ Festive Specials</span><span>✦ Pure Silk</span><span>✦ Free Shipping ₹999+</span>
+    <span>✦ Kanjeevaram Silk</span><span>✦ Banarasi Weaves</span><span>✦ Bridal Collections</span>
+    <span>✦ Festive Specials</span><span>✦ Pure Silk</span><span>✦ Free Shipping ₹999+</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="categories">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Browse By</p>
+      <h2>Curated Collections</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="filterCategory('kanjeevaram')">
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80" alt="Kanjeevaram"/>
+        <div class="cat-label">Kanjeevaram</div>
+      </div>
+      <div class="cat-card" onclick="filterCategory('banarasi')">
+        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400&q=80" alt="Banarasi"/>
+        <div class="cat-label">Banarasi</div>
+      </div>
+      <div class="cat-card" onclick="filterCategory('bridal')">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Bridal"/>
+        <div class="cat-label">Bridal</div>
+      </div>
+      <div class="cat-card" onclick="filterCategory('cotton')">
+        <img src="https://images.unsplash.com/photo-1629374498784-a7b9fbdba6d5?w=400&q=80" alt="Cotton"/>
+        <div class="cat-label">Cotton Silk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our Finest</p>
+      <h2>Featured Sarees</h2>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="setFilter(this,'all')">All</button>
+      <button class="filter-btn" onclick="setFilter(this,'kanjeevaram')">Kanjeevaram</button>
+      <button class="filter-btn" onclick="setFilter(this,'banarasi')">Banarasi</button>
+      <button class="filter-btn" onclick="setFilter(this,'bridal')">Bridal</button>
+      <button class="filter-btn" onclick="setFilter(this,'cotton')">Cotton Silk</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== OFFER BANNER ===== -->
+<section class="offer-banner">
+  <div class="offer-content">
+    <p class="offer-tag">Limited Time</p>
+    <h2>Grand Festive Sale</h2>
+    <p>Up to <strong>40% OFF</strong> on select Kanjeevaram & Banarasi collections. Ends Sunday.</p>
+    <button class="btn-primary" onclick="scrollTo('products')">Shop The Sale</button>
+  </div>
+  <div class="offer-decor">
+    <div class="offer-circle c1"></div>
+    <div class="offer-circle c2"></div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Trusted By</p>
+      <h2>Customer Reviews</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Absolutely stunning quality. My Kanjeevaram arrived perfectly packed and the silk is exquisite. Will definitely order again!"</p>
+        <div class="reviewer"><img src="https://i.pravatar.cc/48?img=5" alt=""/><div><strong>Priya Lakshmi</strong><span>Chennai</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Wore this to my sister's wedding and received so many compliments. The zari work is gorgeous. Premium quality at a great price."</p>
+        <div class="reviewer"><img src="https://i.pravatar.cc/48?img=9" alt=""/><div><strong>Meena Sharma</strong><span>Delhi</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>"Beautiful Banarasi saree, delivery was fast and communication excellent via WhatsApp. Packaging was royal and secure."</p>
+        <div class="reviewer"><img src="https://i.pravatar.cc/48?img=16" alt=""/><div><strong>Anita Desai</strong><span>Mumbai</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter">
+  <div class="container">
+    <div class="nl-inner">
+      <div class="nl-text">
+        <h3>Join Our Inner Circle</h3>
+        <p>Be the first to know about new collections, exclusive offers & festive drops.</p>
+      </div>
+      <div class="nl-form">
+        <input type="email" placeholder="Your email address" class="nl-input"/>
+        <button class="btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-col">
+        <div class="about-img-frame">
+          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80" alt="Our Story"/>
+          <div class="about-badge">Est. 1987</div>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <p class="eyebrow">Our Heritage</p>
+        <h2>Woven with<br/><em>Generations of Love</em></h2>
+        <p>Founded in Kanchipuram over three decades ago, Kanjeevaram Silks is a family legacy of master weavers. Each saree carries the soul of centuries-old craft traditions, spun from the finest mulberry silk and adorned with 22-carat zari.</p>
+        <p>We believe every woman deserves to feel like royalty. Our artisans pour months of labour into each piece, creating heirlooms that pass through generations.</p>
+        <div class="about-values">
+          <div class="value-item"><i class="fa fa-gem"></i><span>Pure Silk Certified</span></div>
+          <div class="value-item"><i class="fa fa-truck"></i><span>Free Pan-India Shipping</span></div>
+          <div class="value-item"><i class="fa fa-rotate-left"></i><span>7-Day Easy Return</span></div>
+          <div class="value-item"><i class="fa fa-shield-halved"></i><span>100% Authentic Weaves</span></div>
+        </div>
+        <button class="btn-primary" onclick="scrollTo('contact')">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Reach Us</p>
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-item"><i class="fa fa-location-dot"></i><div><strong>Store Address</strong><p>12, Silk Weavers Street, Kanchipuram – 631502, Tamil Nadu</p></div></div>
+        <div class="info-item"><i class="fa fa-phone"></i><div><strong>Phone</strong><p>+91 98765 43210</p></div></div>
+        <div class="info-item"><i class="fa fa-envelope"></i><div><strong>Email</strong><p>hello@kanjeevaramsilks.in</p></div></div>
+        <div class="social-links">
+          <a href="https://wa.me/919876543210" target="_blank" class="social-btn wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          <a href="https://t.me/KanjeevaramSilks" target="_blank" class="social-btn tg"><i class="fab fa-telegram-plane"></i> Message on Telegram</a>
+        </div>
+        <div class="faq-section">
+          <h4>FAQ</h4>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do you ship outside India? <i class="fa fa-chevron-down"></i></button>
+            <p class="faq-a">Yes! We ship worldwide. International shipping charges apply and delivery takes 7–14 business days.</p>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What is your return policy? <i class="fa fa-chevron-down"></i></button>
+            <p class="faq-a">We offer a 7-day hassle-free return policy. Sarees must be unused and in original packaging.</p>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is Cash on Delivery available? <i class="fa fa-chevron-down"></i></button>
+            <p class="faq-a">Yes, COD is available for orders under ₹20,000 across India.</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" onsubmit="submitContact(event)">
+          <h3>Send a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <label>Mobile</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@email.com" required/>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us how we can help…" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-w">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">✦</span>
+          <div><span class="logo-main">Kanjeevaram</span><span class="logo-sub">SILKS</span></div>
+        </div>
+        <p>Handcrafted luxury sarees from the looms of Kanchipuram. Every thread tells a story.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://t.me/KanjeevaramSilks" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Collections</h4>
+        <a href="#" onclick="filterCategory('kanjeevaram')">Kanjeevaram</a>
+        <a href="#" onclick="filterCategory('banarasi')">Banarasi</a>
+        <a href="#" onclick="filterCategory('bridal')">Bridal</a>
+        <a href="#" onclick="filterCategory('cotton')">Cotton Silk</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return & Exchange</a>
+        <a href="#">Size Guide</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kanjeevaram Silks. All rights reserved. Made with ❤️ in India.</p>
+      <div class="payment-icons">
+        <span>UPI</span><span>VISA</span><span>MC</span><span>RuPay</span><span>COD</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<a href="https://wa.me/919876543210" target="_blank" class="float-wa" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+  <i class="fa fa-chevron-up"></i>
+</button>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart <span id="cartItemCount">(0 items)</span></h3>
+    <button onclick="closeCart()"><i class="fa fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="empty-cart">
+      <i class="fa fa-shopping-bag"></i>
+      <p>Your cart is empty</p>
+      <button class="btn-primary" onclick="closeCart()">Continue Shopping</button>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-totals">
+      <div class="total-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="total-row"><span>Shipping</span><span class="free">FREE</span></div>
+      <div class="total-row total-grand"><span>Total</span><span id="grandTotal">₹0</span></div>
+    </div>
+    <button class="btn-primary full-w" onclick="openCheckout()">Proceed to Checkout</button>
+    <button class="btn-outline full-w" onclick="closeCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ===== PRODUCT MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="product-modal" id="productModal">
+  <button class="modal-close" onclick="closeModal()"><i class="fa fa-xmark"></i></button>
+  <div class="modal-body" id="modalBody"></div>
+</div>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="modal-overlay checkout-overlay" id="checkoutOverlay" onclick="closeCheckout()"></div>
+<div class="checkout-modal" id="checkoutModal">
+  <button class="modal-close" onclick="closeCheckout()"><i class="fa fa-xmark"></i></button>
+  <div class="checkout-inner">
+    <div class="checkout-form-col">
+      <h3>Delivery Details</h3>
+      <form id="checkoutForm" onsubmit="placeOrder(event)">
+        <div class="form-group"><label>Full Name *</label><input type="text" id="co-name" required placeholder="Your full name"/></div>
+        <div class="form-row">
+          <div class="form-group"><label>Mobile *</label><input type="tel" id="co-phone" required placeholder="+91 XXXXX XXXXX"/></div>
+          <div class="form-group"><label>Pincode *</label><input type="text" id="co-pin" required placeholder="6-digit pincode"/></div>
+        </div>
+        <div class="form-group"><label>Address *</label><textarea id="co-address" rows="2" required placeholder="House no, Street, Area"></textarea></div>
+        <div class="form-group"><label>City *</label><input type="text" id="co-city" required placeholder="Your city"/></div>
+        <h3 style="margin-top:1.5rem">Payment Method</h3>
+        <div class="payment-options">
+          <label class="pay-option">
+            <input type="radio" name="payment" value="upi" checked/>
+            <div class="pay-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/120px-UPI-Logo-vector.svg.png" alt="UPI" style="height:20px"/><span>UPI / GPay / PhonePe</span></div>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="card"/>
+            <div class="pay-card"><i class="fa fa-credit-card"></i><span>Credit / Debit Card</span></div>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="cod"/>
+            <div class="pay-card"><i class="fa fa-money-bill-wave"></i><span>Cash on Delivery</span></div>
+          </label>
+        </div>
+        <button type="submit" class="btn-primary full-w" style="margin-top:1.5rem">Place Order</button>
+      </form>
+    </div>
+    <div class="checkout-summary-col">
+      <h3>Order Summary</h3>
+      <div class="summary-items" id="summaryItems"></div>
+      <div class="cart-totals">
+        <div class="total-row"><span>Subtotal</span><span id="co-subtotal">₹0</span></div>
+        <div class="total-row"><span>Shipping</span><span class="free">FREE</span></div>
+        <div class="total-row total-grand"><span>Total</span><span id="co-total">₹0</span></div>
+      </div>
+      <div class="delivery-info">
+        <i class="fa fa-truck"></i>
+        <p>Free delivery on all orders above ₹999. Estimated delivery: 5–7 business days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUCCESS TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
